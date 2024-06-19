@@ -16,7 +16,7 @@ def plot_data(symbol, x_axis, y_axis, start_date, end_date, timeframe="1d"):
     plt.xlabel(x_axis)
     plt.ylabel(y_axis)
     plt.grid(True)
-    plt.show()
+    return plt.show()
 
 
 
@@ -26,4 +26,4 @@ def plot_data(symbol, x_axis, y_axis, start_date, end_date, timeframe="1d"):
 # x_axis = "Date" 
 # y_axis = "Open"
 
-plot_data(symbol, x_axis, y_axis, start_date, end_date,"1wk")
+# plot_data(symbol, x_axis, y_axis, start_date, end_date,"1wk")
