@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+# through this code i fetch multiple tickers from yahoo finance 
 
 def get_nse_tickers():
     url = "https://finance.yahoo.com/quote/%5ENSEI/components/"

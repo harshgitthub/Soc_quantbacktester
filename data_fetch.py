@@ -20,7 +20,7 @@ start_date = "2024-06-01"
 end_date = "2024-06-19"
 symbol = "RELIANCE.NS"
 
-# print(download_historical_data(symbol , start_date, end_date , ))
+print(download_historical_data(symbol , start_date, end_date , ))
 
 
 

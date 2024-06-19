@@ -1,6 +1,6 @@
 import pandas as pd 
 import matplotlib.pyplot as plt 
-from data_fetch import download_historical_data
+from data_fetch import download_historical_data # called from deat_fetch
 from performance import plot_data  # Importing plot_data function from performance module
 
 
@@ -16,7 +16,7 @@ x_axis = "Date"
 
 # Call plot_data function to plot and display the data
 
-plot_data(s, x_axis, y_axis, start_date, end_date)
+plot_data(s, x_axis, y_axis, start_date, end_date)  # here by default we take timeframe = 1d
 
 # for getting many at a time 
 
