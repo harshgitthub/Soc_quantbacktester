@@ -10,7 +10,7 @@ def plot_data(symbol, x_axis, y_axis, start_date, end_date, timeframe="1d"):
     
     X = df[x_axis]
     Y = df[y_axis]
-
+    
     plt.plot(X, Y)
     plt.title(f'{y_axis} vs {x_axis} for {symbol}')
     plt.xlabel(x_axis)
@@ -20,10 +20,10 @@ def plot_data(symbol, x_axis, y_axis, start_date, end_date, timeframe="1d"):
 
 
 
-start_date = "2024-06-01"
-end_date = "2024-06-19"
-symbol = "RELIANCE.NS"
-x_axis = "Date" 
-y_axis = "Open"
+# start_date = "2024-06-01"
+# end_date = "2024-06-19"
+# symbol = "RELIANCE.NS"
+# x_axis = "Date" 
+# y_axis = "Open"
 # done for 1wk
-plot_data(symbol, x_axis, y_axis, start_date, end_date,"1d")
+# plot_data(symbol, x_axis, y_axis, start_date, end_date,"1d")
