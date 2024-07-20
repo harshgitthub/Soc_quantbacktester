@@ -35,17 +35,3 @@ def download_historical_data(symbol , start_date , end_date , timeframe = "1d"):
     df = df.dropna()
     df.reset_index(inplace=True)
     return df 
-
-
-# start_date = "2024-07-01"
-# end_date = "2024-07-05"
-# symbol = "GAIL.BO"
-
-
-# dataset = pd.DataFrame(download_historical_data(symbol , start_date, end_date , ))
-
-# print(dataset[['Date','Close']].tail(5))
-
-
-
-# THIS IS DOWNLOAD HISTORICAL DATA FUNCTION 

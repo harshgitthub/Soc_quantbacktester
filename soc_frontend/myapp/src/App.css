@@ -1,4 +1,4 @@
-table {
+.table {
   min-width: auto;
   border-collapse: collapse;
   margin: 25px 0;
@@ -34,3 +34,18 @@ tbody tr.active-row {
   font-weight: bold;
   color: rgb(224, 150, 66);
 }
+
+.nav-item ,.nav-link{
+  border-radius: 2px;
+  margin: 5px;
+  padding: 2px;
+}
+
+.nav-link:hover{
+  background-color: rgb(178, 225, 233);
+  font-style: italic;
+  color: white;
+  border-radius:3px;
+  font-size: 30px;
+}
+

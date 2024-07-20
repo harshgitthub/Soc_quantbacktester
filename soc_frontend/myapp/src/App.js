@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
-import form from './form';
-import Form from './form';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+
+import React, { useState } from 'react';
+
 import StockForm from './form';
 import { BrowserRouter as Router, Routes, Route, Switch, Link, BrowserRouter } from 'react-router-dom';
-import Nifty from './nifty';
-import Edit from './editor';
+
 import Trend from './trend';
-import Arbit from './arbitage';
+import PostTrade from './post_trade';
+import Strategy from './strategy';
+import Guess from './guess';
+
 
 function App() {
   const [data, setData] = useState(null);
@@ -32,28 +33,40 @@ function App() {
           <a className="nav-link active" aria-current="page" href="/">Show Data</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/edit">Editor</a>
+          <a className="nav-link active" href="/strategy">Strategy</a>
+        </li>
+        
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="/post">Analysis</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/arbit">INDEXES</a>
+          <a className="nav-link active" aria-current="page" href="/guess">Guess</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/trend">Trend</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+
+        <li className="nav-item"><a className="nav-link active" target='_blank' aria-current="page" href="https://in.tradingview.com/">Trading view</a></li>
+        <li className="nav-item"><a className="nav-link active" target='_blank'  aria-current="page" href="https://www.chittorgarh.com/">Chittorgarh.com</a></li>
+            <li className="nav-item"><a className="nav-link active" target='_blank'  aria-current="page" href="https://intradayscreener.com/stock-market-today">Intraday screener</a></li>
+            <li className="nav-item"> <a className="nav-link active" target='_blank'  aria-current="page" href="https://www.moneycontrol.com/">Moneycontrol</a></li>
       </ul>
+
+     
     </div>
+    
   </div>
 </nav>
     <header className="App-header"></header>
     <Routes>
     <Route path="/" element={<StockForm/>} />
-    {/* <Route path='/' element={<StockForm/>}> */}
-    <Route path="/edit" element={<Edit/>} />
-    {/* <Route path="/arbit" element={<Arbit/>} /> */}
+    <Route path='/post' element={<PostTrade/>}/>
+   
+    <Route path='/guess' element={<Guess/>}/>
     <Route path="/trend" element={<Trend/>} />
+    <Route path='/strategy' element={<Strategy/>}/>   
+     {/* <Route path="/data-input" element={<DataInput/>} />
+        <Route path="/preprocess" element={<Preprocess/>
+        } />
+        <Route path="/strategy-editor" element={<StrategyEditor/>} />
+        <Route path="/result-display" element={<ResultDisplay/>} /> */}
     {/* </Route> */}
     </Routes>
 

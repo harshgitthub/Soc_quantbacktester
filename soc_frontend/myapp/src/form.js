@@ -30,7 +30,7 @@ function StockForm() {
         start_date: startDate,
         end_date: endDate
       });
-
+      console.log(response.data)
       setData(response.data);
       const response2 = await axios.post('http://127.0.0.1:5000/nifty_stock', {
         start_date: startDate,
@@ -48,6 +48,17 @@ function StockForm() {
       {
         label: label,
         data: dataSet.map(row => row.cumulative_return),
+        borderColor: color,
+        fill: false,
+      },
+    ],
+  });
+  const createChartData2 = (label, value ,dataSet, color ,) => ({
+    labels: dataSet.map(row => row.Date),
+    datasets: [
+      {
+        label: label,
+        data: dataSet.map(row => row[value]),
         borderColor: color,
         fill: false,
       },
@@ -109,7 +120,6 @@ function StockForm() {
               <th>Low</th>
               <th>Volume</th>
               <th> Daily return</th>
-              
               <th> net cumulative return </th>
             </tr>
           </thead>
@@ -125,7 +135,6 @@ function StockForm() {
                 <td>{row.Daily_Return}</td>
                 <td>{row.cumulative_return}</td>
               </tr>
-              
             ))}
           </tbody>
         </table>
@@ -186,13 +195,21 @@ function StockForm() {
     </table>
   </div>
 )}
-<Link to="/edit">Move to trading</Link>
+
+
 
 {data.length > 0 && (
         <Line
           data={createChartData(symbol, data, 'rgb(0, 217,255)' ) }
         />
       )}
+
+{data.length > 0 && (
+        <Line
+          data={createChartData2(symbol,"Close", data, 'rgb(0, 217,255)' ) }
+        />
+      )}
+
 
       {data2.length > 0 && (
         <Line
